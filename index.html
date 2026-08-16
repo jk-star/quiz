@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeIgniter 4 Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="startScreen" class="card start-screen">
+      <div class="badge">CodeIgniter 4</div>
+      <h1>Interview Quiz</h1>
+      <p>Practice the questions from your CodeIgniter 4 interview notes.</p>
+
+      <div class="setup">
+        <label for="questionCount">Number of Questions</label>
+        <select id="questionCount">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="source-note">
+        <strong>Source note:</strong> The uploaded file contains questions and answers, not
+        pre-written MCQ options. The app creates 3 distractors from other answers in the same
+        source so you can practice.
+      </div>
+
+      <button id="startBtn" class="btn primary">Start Quiz</button>
+    </section>
+
+    <section id="quizScreen" class="hidden">
+      <header class="quiz-header">
+        <div>
+          <span id="progressText">Question 1 of 10</span>
+          <h2>CodeIgniter 4 Quiz</h2>
+        </div>
+        <div class="score-box">Score: <span id="liveScore">0</span></div>
+      </header>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <article class="card question-card">
+        <div class="question-number" id="questionNumber">Question 1</div>
+        <h3 id="questionText"></h3>
+        <div id="options" class="options"></div>
+
+        <div id="feedback" class="feedback hidden"></div>
+
+        <div class="actions">
+          <button id="nextBtn" class="btn primary" disabled>Next</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="resultScreen" class="card result-screen hidden">
+      <div class="badge">Quiz Complete</div>
+      <h1>Your Result</h1>
+      <div class="result-score"><span id="finalScore">0</span>/<span id="finalTotal">0</span></div>
+      <p id="resultMessage"></p>
+
+      <div class="result-grid">
+        <div><strong id="correctCount">0</strong><span>Correct</span></div>
+        <div><strong id="wrongCount">0</strong><span>Wrong</span></div>
+        <div><strong id="percentage">0%</strong><span>Percentage</span></div>
+      </div>
+
+      <div class="actions result-actions">
+        <button id="reviewBtn" class="btn secondary">Review Answers</button>
+        <button id="restartBtn" class="btn primary">Restart Quiz</button>
+      </div>
+    </section>
+
+    <section id="reviewScreen" class="hidden">
+      <div class="review-header">
+        <h2>Answer Review</h2>
+        <button id="backResultBtn" class="btn secondary">Back to Result</button>
+      </div>
+      <div id="reviewList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
